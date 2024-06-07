@@ -12,4 +12,10 @@
     {
        public string CupboardName { get; set; }
     }
+
+    public class AddLocationDto
+    {
+        public string CupboardName { get; set; }
+        public int ShelfNo { get; set; }
+    }
 }

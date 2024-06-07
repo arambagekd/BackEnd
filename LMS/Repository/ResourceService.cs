@@ -101,6 +101,7 @@ namespace LMS.Repository
             if (searchbookDto.tag == "all")
             {
                 records = _Context.Resources.Where(e =>
+                    e.Title.ToLower().Contains(searchbookDto.keyword.ToLower())||
                    e.ISBN.ToLower().Contains(searchbookDto.keyword.ToLower()) ||
                    e.AuthorName.ToLower().Contains(searchbookDto.keyword.ToLower()) 
                    ).ToList();
@@ -137,7 +138,8 @@ namespace LMS.Repository
                     remain=x.Quantity-x.Borrowed,
                     dateadded=x.AddedOn,
                     noOfRes=count,
-                    author = x.AuthorName
+                    author = x.AuthorName,
+                    location = x.BookLocation
                 };
 
                 reso.Add(y);

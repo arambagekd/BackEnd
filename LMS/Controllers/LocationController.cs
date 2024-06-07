@@ -26,5 +26,17 @@ namespace LMS.Controllers
         {
             return await _locationService.GetAllLocation(location.CupboardName);
         }
+
+        [HttpPost("SearchResources")]
+        public async Task<List<ResourceListDto>> SearchResources(SearchbookcupDto request)
+        {
+            return await _locationService.SearchResources(request);
+        }
+
+        [HttpPost("AddLocation")]
+        public async Task<bool> AddLocation(AddLocationDto location)
+        {
+            return await _locationService.AddLocation(location);
+        }
     }
 }

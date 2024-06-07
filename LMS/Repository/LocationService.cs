@@ -7,9 +7,11 @@ namespace LMS.Repository
     public class LocationService:ILocationService
     {
         private readonly DataContext _Context;
-        public LocationService(DataContext context)
+        private readonly IResourceService _resourceService;
+        public LocationService(DataContext context, IResourceService resourceService)
         {
             _Context = context;
+            _resourceService = resourceService;
         }
         public async Task<List<LocationListDto>> GetAllLocation(string cupboardname)
         {
@@ -39,9 +41,60 @@ namespace LMS.Repository
                 locationListDtos.Add(locationListDto);
             }
             if(cupboardname != "")
-            locationListDtos = locationListDtos.Where(e => e.CupboardName == cupboardname).ToList();
+            locationListDtos = locationListDtos.Where(e => e.CupboardName.ToLower().Contains(cupboardname.ToLower())).ToList();
 
             return locationListDtos;
+        }
+
+        public async Task<List<ResourceListDto>> SearchResources(SearchbookcupDto request)
+        {
+            var resources = new List<ResourceListDto>();
+
+            var req=new SearchbookDto
+            {
+                keyword = request.keyword,
+                tag = request.tag,
+                type = request.type
+            };
+
+            resources= await _resourceService.SearchResources(req);
+
+            resources=resources.Where(e=>e.location==request.location).ToList();
+
+            return resources;
+        }
+
+        public async Task<bool> AddLocation(AddLocationDto location)
+        {
+            var cupboard = await _Context.Cupboard.FirstOrDefaultAsync(e => e.name == location.CupboardName);
+
+            if (cupboard == null)
+            {
+                cupboard = new Cupboard
+                {
+                    name = location.CupboardName
+                };
+
+                await _Context.Cupboard.AddAsync(cupboard);
+                await _Context.SaveChangesAsync();
+
+                for (int i = 1; i <= location.ShelfNo; i++)
+                {
+                    await _Context.Locations.AddAsync(new Location
+                    {
+                        LocationNo = cupboard.cupboardID.ToString() + "-" + i.ToString(),
+                        CupboardId = cupboard.cupboardID,
+                        ShelfNo = i
+                    });
+                    await _Context.SaveChangesAsync();
+                }
+
+                return true;
+            }
+            else
+            {
+                throw new Exception("Cupboard already exists");
+            }
         }
     }
 }
