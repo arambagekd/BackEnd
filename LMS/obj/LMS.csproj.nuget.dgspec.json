@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\For Deploy\\LMS_BackEnd - Copy\\LMS\\LMS\\LMS.csproj": {}
+    "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\YES\\BackEnd\\LMS\\LMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\For Deploy\\LMS_BackEnd - Copy\\LMS\\LMS\\LMS.csproj": {
+    "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\YES\\BackEnd\\LMS\\LMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\For Deploy\\LMS_BackEnd - Copy\\LMS\\LMS\\LMS.csproj",
+        "projectUniqueName": "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\YES\\BackEnd\\LMS\\LMS.csproj",
         "projectName": "LMS",
-        "projectPath": "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\For Deploy\\LMS_BackEnd - Copy\\LMS\\LMS\\LMS.csproj",
+        "projectPath": "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\YES\\BackEnd\\LMS\\LMS.csproj",
         "packagesPath": "C:\\Users\\Arambage K D\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\For Deploy\\LMS_BackEnd - Copy\\LMS\\LMS\\obj\\",
+        "outputPath": "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\YES\\BackEnd\\LMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Arambage K D\\AppData\\Roaming\\NuGet\\NuGet.Config",

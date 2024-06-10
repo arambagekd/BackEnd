@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b2KWD6Ij83apT7PI6zvUUeTCtY9hfd8/N7eClEsuRKyVkjjmV5EWrsyqSYvMrrwIAM1a3l0G69VgpEH67891Lg==",
+  "dgSpecHash": "RoMrPivkVH3hGWGXAXBc4xGXZ9ZDT1zSFpOY6q4h+wUWaCWk883PTz5w05tGUWgATn7x95pZ5g2O5EwCG/RBdA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\For Deploy\\LMS_BackEnd - Copy\\LMS\\LMS\\LMS.csproj",
+  "projectFilePath": "C:\\Users\\Arambage K D\\Desktop\\New folder (5)\\YES\\BackEnd\\LMS\\LMS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Arambage K D\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Arambage K D\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
